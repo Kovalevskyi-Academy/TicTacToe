@@ -1,4 +1,4 @@
-package xo.model;
+package io.hexlet.xo.model;
 
 public class Player{
 

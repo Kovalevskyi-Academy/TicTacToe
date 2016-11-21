@@ -1,3 +1,5 @@
+package io.hexlet.xo.model;
+
 public class Point{
 	
 	private final int x;
