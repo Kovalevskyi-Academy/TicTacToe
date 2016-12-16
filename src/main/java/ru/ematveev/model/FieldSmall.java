@@ -2,10 +2,11 @@ package ru.ematveev.model;
 
 public class FieldSmall {
 
-	private final Figure[][] figures = new Figure[3][3];
+	private final static int FIELD_SIZE = 3;
+	private final Figure[][] figures = new Figure[FIELD_SIZE][FIELD_SIZE];
 
 	public int getSize() {
-		return figures.length;
+		return FIELD_SIZE;
     	}
 
    	public Figure getFigure(final Point point) {
