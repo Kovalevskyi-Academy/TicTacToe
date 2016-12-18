@@ -12,9 +12,7 @@ public class PlayerTest {
     public void testGetName() throws Exception {
         final String inputValue = "Evgeny";
         final String expectedValue = inputValue;
-
         final Player player = new Player(inputValue, null);
-
         final String actualValue = player.getName();
 
         assertEquals(expectedValue, actualValue);
@@ -24,9 +22,7 @@ public class PlayerTest {
     public void testGetFigure() throws Exception {
         final Figure inputValue = Figure.O;
         final Figure expectedValue = inputValue;
-
         final Player player = new Player(null, inputValue);
-
         final Figure actualValue = player.getFigure();
 
         assertEquals(expectedValue, actualValue);
