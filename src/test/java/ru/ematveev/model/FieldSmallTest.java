@@ -10,22 +10,23 @@ import static org.junit.Assert.*;
 public class FieldSmallTest {
     @Test
     public void testGetSize() throws Exception {
-        final int expectedValue = 3;
         FieldSmall fieldSmall = new FieldSmall();
+        final int expectedValue = 3;
         final int actualValue = fieldSmall.getSize();
+
         assertEquals(expectedValue, actualValue);
 
     }
 
     @Test
-    public void testSetFigure() throws Exception {
+    public void testGetFigure() throws Exception {
         FieldSmall fieldSmall = new FieldSmall();
         Point inputPoint = new Point(0,0);
         Figure inputFigure = Figure.O;
-        Figure expectedValue = inputFigure;
-
         fieldSmall.setFigure(inputPoint, inputFigure);
+        Figure expectedValue = inputFigure;
         final Figure actualValue = fieldSmall.getFigure(inputPoint);
+
         assertEquals(expectedValue, actualValue);
     }
 
