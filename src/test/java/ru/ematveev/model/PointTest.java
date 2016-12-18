@@ -15,6 +15,7 @@ public class PointTest {
         int expectedValue = inputValue;
         Point point = new Point(inputValue, inputY);
         int actualValue = point.getX();
+
         assertEquals(expectedValue, actualValue);
 
     }
@@ -26,6 +27,7 @@ public class PointTest {
         int expectedValue = inputValue;
         Point point = new Point(inputX, inputValue);
         int actualValue = point.getY();
+
         assertEquals(expectedValue, actualValue);
     }
 
