@@ -35,7 +35,6 @@ public class ConsoleView implements ICoordinateGetter {
         }
 	    sb.append("\n");
     }
-
         void generateSeparator(final StringBuilder sb) {
 	sb.append("~~~~~~~~~~~\n");
     }
