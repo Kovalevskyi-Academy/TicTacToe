@@ -8,21 +8,41 @@ import ru.ematveev.model.Point;
 import static org.junit.Assert.*;
 
 public class CurrentMoveControllerTest {
+    
     @Test
-    public void testCurrentMove() throws Exception {
-        FieldSmall fieldSmall = new FieldSmall();
-        Point p = new Point(0, 0);
-        Point p1 = new Point(1, 0);
-        Point p2 = new Point(2, 0);
-        fieldSmall.setFigure(p, Figure.X);
-        fieldSmall.setFigure(p1, Figure.O);
-        fieldSmall.setFigure(p2, Figure.O);
+    public void testCurrentMoveWhenInputFieldIsEmpty() throws Exception {      
         CurrentMoveController currentMoveController = new CurrentMoveController();
-        final FieldSmall inputValue = new FieldSmall();
-        final Figure actualValue = currentMoveController.currentMove(inputValue);
-        final Figure expectedValue = Figure.X;
+        
+        final Figure actualValue
+            = currentMoveController.currentMove(new FieldSmall());
 
-        assertEquals(expectedValue, actualValue);
+        assertSame(Figure.X, actualValue);
+    }
+    
+    @Test
+    public void testCurrentMoveWhenOnlyOneFigureXOnTheField() throws Exception {      
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(0, 0);
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(0, 1);
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(0, 2);  
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(1, 0);
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(1, 1);
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(1, 2);
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(2, 0);
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(2, 1);
+        testCurrentMoveWhenOnlyOneFigureXOnTheField(2, 2);
+    }
+    
+    private void testCurrentMoveWhenOnlyOneFigureXOnTheField(final int x, final int y)
+                                                        throws Exception {      
+        final FieldSmall inputField = new FieldSmall();
+        final Point p = new Point(x, y);
+        fieldSmall.setFigure(p, Figure.X);
+        
+        CurrentMoveController currentMoveController = new CurrentMoveController();
+        
+        final Figure actualValue
+            = currentMoveController.currentMove(inputField);
 
+        assertSame(Figure.O, actualValue);
     }
 }
